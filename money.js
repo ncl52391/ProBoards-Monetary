@@ -888,7 +888,7 @@ var money = {
 			this.settings.posting.amounts.per_poll = this.format(settings.money_per_poll);
 			this.settings.posting.amounts.per_reply = this.format(settings.money_per_reply);
 			this.settings.posting.amounts.per_quick_reply = this.format(settings.money_per_quick_reply);
-			this.settings.posting.amounts.per_mobile_post = this.format(settings.money_per_mobile_post);
+			this.settings.posting.amounts.per_mobile_post = (settings.money_per_mobile_post && settings.money_per_mobile_post.toString().length)? this.format(settings.money_per_mobile_post) : this.settings.posting.amounts.per_mobile_post;
 
 			if(settings.categories_earn_amounts && settings.categories_earn_amounts.length){
 				for(var c = 0, cl = settings.categories_earn_amounts.length; c < cl; c ++){
@@ -899,7 +899,7 @@ var money = {
 						per_poll: this.format(cat_earn_amounts.money_per_poll),
 						per_reply: this.format(cat_earn_amounts.money_per_reply),
 						per_quick_reply: this.format(cat_earn_amounts.money_per_quick_reply),
-						per_mobile_post: this.format(cat_earn_amounts.money_per_mobile_post)
+						per_mobile_post: (cat_earn_amounts.money_per_mobile_post && cat_earn_amounts.money_per_mobile_post.toString().length)? this.format(cat_earn_amounts.money_per_mobile_post) : this.settings.posting.amounts.per_mobile_post
 					};
 
 					for(var ci = 0, cil = cat_earn_amounts.category.length; ci < cil; ci ++){
@@ -917,7 +917,7 @@ var money = {
 						per_poll: this.format(board_earn_amounts.money_per_poll),
 						per_reply: this.format(board_earn_amounts.money_per_reply),
 						per_quick_reply: this.format(board_earn_amounts.money_per_quick_reply),
-						per_mobile_post: this.format(board_earn_amounts.money_per_mobile_post)
+						per_mobile_post: (board_earn_amounts.money_per_mobile_post && board_earn_amounts.money_per_mobile_post.toString().length)? this.format(board_earn_amounts.money_per_mobile_post) : this.settings.posting.amounts.per_mobile_post
 					};
 
 					for(var bi = 0, bil = board_earn_amounts.board.length; bi < bil; bi ++){

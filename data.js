@@ -95,7 +95,7 @@ money.Data = (function(){
 		this.data.li = (typeof this.data.li == "string")? this.data.li : "";
 		this.data.s = (typeof this.data.s == "object" && this.data.s.constructor == Object)? this.data.s : {};
 		this.data.w = (typeof this.data.w == "object" && this.data.w.constructor == Object)? this.data.w : {};
-		this.data.g = (typeof this.data.g == "object" && this.data.lt.constructor == Array)? this.data.g : [];
+		this.data.g = (typeof this.data.g == "object" && this.data.g.constructor == Array)? this.data.g : [];
 		this.data.or = (typeof this.data.or == "number")? this.data.or : 0;
 		this.data.d = (typeof this.data.d == "object" && this.data.d.constructor == Array)? this.data.d : [];
 		this.data.rd = (typeof this.data.rd == "object" && this.data.rd.constructor == Array)? this.data.rd : [];

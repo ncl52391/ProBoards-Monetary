@@ -2031,7 +2031,7 @@ monetary.shop = (function(){
 					msg += "</tr>";
 				}
 
-				msg + "</tbody></table>";
+				msg += "</tbody></table>";
 
 				var plu = (total_items == 1)? "" : "s";
 				var title = "Confirm " + this.settings.text.purchase + plu;
