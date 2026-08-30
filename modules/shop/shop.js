@@ -2023,7 +2023,7 @@ monetary.shop = (function(){
 					}
 
 					msg += "<tr class='item'>";
-					msg += "<td style='width: 130px;" + ribbon + "' class='monetaryshop_item_img shop_ribbon" + extra_ribbon_class + "'><img src='" + this.get_image_src(item) + "'' + img_size + disp + ' /></td>";
+					msg += "<td style='width: 130px;" + ribbon + "' class='monetaryshop_item_img shop_ribbon" + extra_ribbon_class + "'><img src='" + this.get_image_src(item) + "'" + img_size + disp + " /></td>";
 					msg += "<td>" + item.item_name + "</td>";
 					msg += "<td style='width: 80px;'>" + grouped_items[key].quantity + "</td>";
 					msg += "<td>" + monetary.settings.money_symbol + yootil.number_format(monetary.format(price, true)) + "</td>";
@@ -2288,7 +2288,7 @@ monetary.shop = (function(){
 
 				var self = this;
 				var time_24 = (yootil.user.time_format() == "12hr")? false : true;
-				var img_size = this.get_size_css();
+				var img_size = this.get_size_css(true);
 				var disp = (!img_size.length && parseInt(this.settings.mini_image_percent) > 0)? " style='display: none;'" : "";
 
 				minis.each(function(){
