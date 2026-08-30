@@ -18,10 +18,23 @@ if(typeof yootil != "undefined"){
 	}
 
 	if(typeof yootil.version != "function"){
-		yootil.version_value = yootil.version;
-		yootil.version = function(){
-			return yootil.version_value;
-		};
+		(function(){
+			var yootil_version = yootil.version;
+
+			try {
+				Object.defineProperty(yootil, "version", {
+					configurable: true,
+					value: function(){
+						return yootil_version;
+					}
+				});
+			} catch(e){
+				yootil.version_value = yootil_version;
+				yootil.version = function(){
+					return yootil.version_value;
+				};
+			}
+		})();
 	}
 
 	if(yootil.key && !yootil.key.set_on && yootil.key.on){
